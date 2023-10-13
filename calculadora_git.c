@@ -87,7 +87,6 @@ break;
         scanf("%lf", &c3);
         eq_cuadr(c1, c2, c3, &res1, &res2);
         printf("%lf\n %lf\n", res1, res2);
-	printf("%p\n", &res1);
 
 break;
 	printf("No válido\n");
@@ -174,5 +173,4 @@ void eq_cuadr(double a, double b, double c, double *r1, double *r2)
 {
 	*r1 = (-b + sqrt(b * b - 4 * a * c))/(2 * a);
 	*r2 = (-b - sqrt(b * b - 4 * a * c))/(2 * a);
-	printf("%p", r1);
 }
