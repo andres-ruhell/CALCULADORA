@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 void leer_arreglo(int arr[]);
 void sumar_arreglo(int arreglo[]);
@@ -7,7 +9,7 @@ double division(int a, int b);
 int factorial(int a);
 int factorial_rec(int a);
 double euler(int z);
-
+void eq_cuadr(double a, double b, double c, double *r1, double *r2);
 
 int main(void){
 
@@ -18,6 +20,12 @@ int main(void){
 	int y = 0;
 	int z = 0;
 	double zdoub = 0;
+
+	double c1 = 0;
+	double c2 = 0;
+	double c3 = 0;
+	double res1 = 0;
+	double res2 = 0;
 
 	scanf("%c", &a);
 
@@ -69,7 +77,19 @@ break;
 	printf("%lf\n", zdoub);
 
 break;
+	case 'c':
 
+	printf("Dame a\n");
+	scanf("%lf", &c1);
+	printf("Dame b\n");
+	scanf("%lf", &c2);
+	printf("Dame c\n");
+        scanf("%lf", &c3);
+        eq_cuadr(c1, c2, c3, &res1, &res2);
+        printf("%lf\n %lf\n", res1, res2);
+	printf("%p\n", &res1);
+
+break;
 	printf("No válido\n");
 }
 
@@ -149,4 +169,10 @@ double euler(int z){
 
 }
         return res1;
+}
+void eq_cuadr(double a, double b, double c, double *r1, double *r2)
+{
+	*r1 = (-b + sqrt(b * b - 4 * a * c))/(2 * a);
+	*r2 = (-b - sqrt(b * b - 4 * a * c))/(2 * a);
+	printf("%p", r1);
 }
